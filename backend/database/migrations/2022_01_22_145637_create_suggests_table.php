@@ -15,6 +15,7 @@ class CreateSuggestsTable extends Migration
     {
         Schema::create('suggests', function (Blueprint $table) {
             $table->id();
+            $table->string('theme')->comment('テーマ');
             $table->timestamps();
         });
     }

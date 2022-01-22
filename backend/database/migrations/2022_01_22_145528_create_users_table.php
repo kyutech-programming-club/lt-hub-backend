@@ -15,6 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->comment('名前');
+            $table->string('email')->comment('メールアドレス');
+            $table->string('avatarUrl')->comment('アイコン');
+            $table->string('uId')->comment('UID');
             $table->timestamps();
         });
     }

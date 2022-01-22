@@ -15,6 +15,9 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
+            $table->string('userId')->comment('ユーザー');
+            $table->string('eventId')->comment('イベント');
+            $table->string('state')->comment('状態');
             $table->timestamps();
         });
     }

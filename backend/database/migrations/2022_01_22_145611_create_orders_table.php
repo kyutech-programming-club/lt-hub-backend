@@ -15,6 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('eventId')->comment('イベント');
+            $table->string('talkId')->comment('発表者');
+            $table->integer('order')->comment('順番');
             $table->timestamps();
         });
     }
