@@ -14,7 +14,7 @@ class CreateTalksTable extends Migration
     public function up()
     {
         Schema::create('talks', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->string('title')->comment('タイトル');
             $table->string('user_id')->comment('発表者');
             $table->string('event_id')->comment('イベント');
