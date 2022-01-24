@@ -20,6 +20,9 @@ class CreateTalksTable extends Migration
             $table->string('event_id')->comment('イベント');
             $table->string('state')->comment('公開範囲');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('event_id')->references('id')->on('events');
         });
     }
 

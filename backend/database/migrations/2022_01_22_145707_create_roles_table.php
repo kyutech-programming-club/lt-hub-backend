@@ -18,6 +18,8 @@ class CreateRolesTable extends Migration
             $table->string('user_id')->comment('ユーザー');
             $table->integer('role')->comment('ロール');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

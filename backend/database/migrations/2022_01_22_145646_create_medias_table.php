@@ -19,6 +19,8 @@ class CreateMediasTable extends Migration
             $table->string('video_url')->nullable()->comment('動画');
             $table->string('slide_url')->nullable()->comment('スライド');
             $table->timestamps();
+
+            $table->foreign('talk_id')->references('id')->on('talks');
         });
     }
 

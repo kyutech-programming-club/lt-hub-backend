@@ -24,6 +24,8 @@ class CreateEventsTable extends Migration
             $table->string('state')->comment('公開範囲');
             $table->integer('participant_number')->comment('参加人数');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

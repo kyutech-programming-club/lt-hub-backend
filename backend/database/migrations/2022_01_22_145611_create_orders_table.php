@@ -19,6 +19,11 @@ class CreateOrdersTable extends Migration
             $table->string('talk_id')->comment('発表者');
             $table->integer('order')->comment('順番');
             $table->timestamps();
+
+            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('talk_id')->references('id')->on('talks');
+
+            $table->unique(['event_id', 'talk_id']);
         });
     }
 

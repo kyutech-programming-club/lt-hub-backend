@@ -19,6 +19,8 @@ class CreateSocialsTable extends Migration
             $table->string('github_id')->nullable()->comment('GitHub');
             $table->string('twitter_id')->nullable()->comment('Twitter');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

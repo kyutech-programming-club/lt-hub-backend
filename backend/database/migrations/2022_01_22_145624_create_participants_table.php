@@ -19,6 +19,11 @@ class CreateParticipantsTable extends Migration
             $table->string('event_id')->comment('イベント');
             $table->string('state')->comment('状態');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('event_id')->references('id')->on('events');
+
+            $table->unique(['user_id', 'event_id']);
         });
     }
 
