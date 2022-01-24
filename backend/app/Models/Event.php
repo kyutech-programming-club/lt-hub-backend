@@ -25,8 +25,20 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function talks()
+    {
+        return $this->hasMany(Talk::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function participantUser()
     {
-        return $this->belongdToMany(User::class)->using(Participant::class);
+        return $this
+            ->belongdToMany(User::class)
+            ->using(Participant::class);
     }
 }

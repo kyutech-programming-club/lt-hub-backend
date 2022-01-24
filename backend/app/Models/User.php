@@ -37,6 +37,22 @@ class User extends Model
 
     public function participatedEvents()
     {
-        return $this->belongsToMany(Event::class)->using(Participant::class);
+        return $this
+            ->belongsToMany(Event::class, 'participants')
+            ->using(Participant::class);
+    }
+
+    public function following()
+    {
+        return $this
+            ->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id')
+            ->using(Follow::class);
+    }
+
+    public function followers()
+    {
+        return $this
+            ->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id')
+            ->using(Follow::class);
     }
 }

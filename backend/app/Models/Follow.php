@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Follow extends Model
+class Follow extends Pivot
 {
-    use HasFactory;
+    protected $table = 'follows';
+
+    public $incrementing = true;
 }
