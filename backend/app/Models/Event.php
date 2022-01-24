@@ -25,14 +25,14 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function talks(): HasManyThrough
+    public function talks(): HasMany
     {
-        return $this->hasManyThrough(Talk::class, Order::class);
+        return $this->hasMany(Talk::class);
     }
 
-    public function orders(): HasMany
+    public function orders(): HasManyThrough
     {
-        return $this->hasMany(Order::class);
+        return $this->hasManyThrough(Order::class, Talk::class);
     }
 
     public function participantUser(): BelongsToMany

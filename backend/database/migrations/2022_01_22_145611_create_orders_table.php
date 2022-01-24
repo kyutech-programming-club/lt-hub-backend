@@ -18,10 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('order')->comment('順番');
             $table->timestamps();
 
-            $table->foreignId('event_id')->constrained('events')->comment('イベント');
             $table->foreignId('talk_id')->constrained('talks')->comment('トーク');
-
-            $table->unique(['event_id', 'talk_id', 'order']);
         });
     }
 
