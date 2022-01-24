@@ -14,10 +14,10 @@ class CreateTalksTable extends Migration
     public function up()
     {
         Schema::create('talks', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->id()->primary();
             $table->string('title')->comment('タイトル');
-            $table->string('user_id')->comment('発表者');
-            $table->string('event_id')->comment('イベント');
+            $table->id('user_id')->comment('発表者');
+            $table->id('event_id')->comment('イベント');
             $table->string('state')->comment('公開範囲');
             $table->timestamps();
 

@@ -14,13 +14,13 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->id()->primary();
             $table->string('title')->comment('タイトル');
             $table->string('description')->nullable()->comment('説明');
             $table->date('start_time')->comment('開始時間');
             $table->date('end_time')->comment('終了時間');
             $table->string('location')->nullable()->comment('場所');
-            $table->string('user_id')->comment('主催者');
+            $table->id('user_id')->comment('主催者');
             $table->string('state')->comment('公開範囲');
             $table->integer('participant_number')->comment('参加人数');
             $table->timestamps();
