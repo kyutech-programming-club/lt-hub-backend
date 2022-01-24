@@ -13,4 +13,9 @@ class Media extends Model
         'video_url',
         'slide_url'
     ];
+
+    public function talk()
+    {
+        return $this->belongsTo(Talk::class);
+    }
 }

@@ -14,4 +14,14 @@ class Talk extends Model
         'state',
         'participant_number'
     ];
+
+    public function media()
+    {
+        return $this->hasOne(Media::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -13,4 +13,9 @@ class Social extends Model
         'gihub_id',
         'twitter_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

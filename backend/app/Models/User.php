@@ -14,4 +14,29 @@ class User extends Model
         'name',
         'avatar_url'
     ];
+
+    public function role()
+    {
+        return $this->hasOne(Role::class);
+    }
+
+    public function social()
+    {
+        return $this->hasOne(Social::class);
+    }
+
+    public function heldEvents()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function talks()
+    {
+        return $this->hasMany(Talk::class);
+    }
+
+    public function participatedEvents()
+    {
+        return $this->belongsToMany(Event::class)->using(Participant::class);
+    }
 }

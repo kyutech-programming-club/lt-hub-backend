@@ -19,4 +19,14 @@ class Event extends Model
         'state',
         'participant_number'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function participantUser()
+    {
+        return $this->belongdToMany(User::class)->using(Participant::class);
+    }
 }
