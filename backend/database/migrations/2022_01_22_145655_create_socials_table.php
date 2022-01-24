@@ -15,12 +15,11 @@ class CreateSocialsTable extends Migration
     {
         Schema::create('socials', function (Blueprint $table) {
             $table->id()->primary();
-            $table->id('user_id')->comment('ユーザー');
             $table->string('github_id')->nullable()->comment('GitHub');
             $table->string('twitter_id')->nullable()->comment('Twitter');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users')->comment('ユーザー');
         });
     }
 

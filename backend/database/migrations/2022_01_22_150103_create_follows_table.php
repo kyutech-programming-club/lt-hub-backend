@@ -19,8 +19,8 @@ class CreateFollowsTable extends Migration
             $table->id('follower_id')->comment('フォロワー');
             $table->timestamps();
 
-            $table->foreign('follow_id')->references('id')->on('users');
-            $table->foreign('follower_id')->references('id')->on('users');
+            $table->foreignId('follow_id')->constrained('users')->comment('フォロー');
+            $table->foreignId('follower_id')->constrained('users')->comment('フォロワー');
 
             $table->unique(['follow_id', 'follower_id']);
         });

@@ -15,12 +15,11 @@ class CreateMediasTable extends Migration
     {
         Schema::create('medias', function (Blueprint $table) {
             $table->id()->primary();
-            $table->id('talk_id')->comment('トーク');
             $table->string('video_url')->nullable()->comment('動画');
             $table->string('slide_url')->nullable()->comment('スライド');
             $table->timestamps();
 
-            $table->foreign('talk_id')->references('id')->on('talks');
+            $table->foreignId('talk_id')->constrained('talks')->comment('トーク');
         });
     }
 

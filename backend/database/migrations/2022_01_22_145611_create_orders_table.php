@@ -14,14 +14,12 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id()->primary();
-            $table->id('event_id')->comment('イベント');
-            $table->id('talk_id')->comment('発表者');
+            $table->id();
             $table->integer('order')->comment('順番');
             $table->timestamps();
 
-            $table->foreign('event_id')->references('id')->on('events');
-            $table->foreign('talk_id')->references('id')->on('talks');
+            $table->foreignId('event_id')->constrained('events')->comment('イベント');
+            $table->foreignId('talk_id')->constrained('talks')->comment('トーク');
 
             $table->unique(['event_id', 'talk_id', 'order']);
         });

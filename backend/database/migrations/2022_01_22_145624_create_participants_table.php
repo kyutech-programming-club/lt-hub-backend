@@ -15,13 +15,11 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id()->primary();
-            $table->id('user_id')->comment('ユーザー');
-            $table->id('event_id')->comment('イベント');
             $table->string('state')->comment('状態');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreignId('user_id')->constrained('users')->comment('ユーザー');
+            $table->foreignId('event_id')->constrained('events')->comment('イベント');
 
             $table->unique(['user_id', 'event_id']);
         });

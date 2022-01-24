@@ -14,15 +14,13 @@ class CreateTalksTable extends Migration
     public function up()
     {
         Schema::create('talks', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('title')->comment('タイトル');
-            $table->id('user_id')->comment('発表者');
-            $table->id('event_id')->comment('イベント');
             $table->string('state')->comment('公開範囲');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreignId('user_id')->constrained('users')->comment('発表者');
+            $table->foreignId('event_id')->constrained('events')->comment('イベント');
         });
     }
 

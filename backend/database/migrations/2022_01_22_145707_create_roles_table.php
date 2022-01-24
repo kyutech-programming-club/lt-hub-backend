@@ -15,11 +15,10 @@ class CreateRolesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id()->primary();
-            $table->id('user_id')->comment('ユーザー');
             $table->integer('role')->comment('ロール');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('user_id')->constrained('users')->comment('ユーザー');
         });
     }
 
