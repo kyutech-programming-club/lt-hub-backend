@@ -15,9 +15,9 @@ class CreateMediasTable extends Migration
     {
         Schema::create('medias', function (Blueprint $table) {
             $table->id();
-            $table->string('talkId')->comment('トーク');
-            $table->string('videoUrl')->comment('動画');
-            $table->string('slideUrl')->comment('スライド');
+            $table->string('talk_id')->comment('トーク');
+            $table->string('video_url')->comment('動画');
+            $table->string('slide_url')->comment('スライド');
             $table->timestamps();
         });
     }

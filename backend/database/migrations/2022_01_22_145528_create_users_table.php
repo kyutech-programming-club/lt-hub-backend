@@ -17,8 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name')->comment('名前');
             $table->string('email')->comment('メールアドレス');
-            $table->string('avatarUrl')->comment('アイコン');
-            $table->string('uId')->comment('UID');
+            $table->string('avatar_url')->comment('アイコン');
+            $table->string('uid')->comment('UID');
             $table->timestamps();
         });
     }

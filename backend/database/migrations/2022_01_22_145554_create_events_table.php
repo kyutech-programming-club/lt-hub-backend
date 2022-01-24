@@ -17,12 +17,12 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title')->comment('タイトル');
             $table->string('description')->comment('説明');
-            $table->date('startTime')->comment('開始時間');
-            $table->date('endTime')->comment('終了時間');
+            $table->date('start_time')->comment('開始時間');
+            $table->date('end_time')->comment('終了時間');
             $table->string('location')->comment('場所');
-            $table->string('hostId')->comment('主催者');
-            $table->string('state')->comment('状態');
-            $table->integer('participants')->comment('参加人数');
+            $table->string('user_id')->comment('主催者');
+            $table->string('state')->comment('公開範囲');
+            $table->integer('participant_number')->comment('参加人数');
             $table->timestamps();
         });
     }
