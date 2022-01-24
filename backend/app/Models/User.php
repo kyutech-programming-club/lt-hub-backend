@@ -15,41 +15,41 @@ class User extends Model
         'avatar_url'
     ];
 
-    public function role()
+    public function role(): HasOne
     {
         return $this->hasOne(Role::class);
     }
 
-    public function social()
+    public function social(): HasOne
     {
         return $this->hasOne(Social::class);
     }
 
-    public function heldEvents()
+    public function heldEvents(): HasMany
     {
         return $this->hasMany(Event::class);
     }
 
-    public function talks()
+    public function talks(): HasMany
     {
         return $this->hasMany(Talk::class);
     }
 
-    public function participatedEvents()
+    public function participatedEvents(): BelongsToMany
     {
         return $this
             ->belongsToMany(Event::class, 'participants')
             ->using(Participant::class);
     }
 
-    public function following()
+    public function following(): BelongsToMany
     {
         return $this
             ->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id')
             ->using(Follow::class);
     }
 
-    public function followers()
+    public function followers(): BelongsToMany
     {
         return $this
             ->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id')

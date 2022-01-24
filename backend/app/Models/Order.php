@@ -14,12 +14,12 @@ class Order extends Model
         'order'
     ];
 
-    public function event()
+    public function event(): BelongsTo
     {
         return $this->belongsTo(Event::class);
     }
 
-    public function talk()
+    public function talk(): BelongsTo
     {
         return $this->belongsTo(Talk::class);
     }

@@ -14,13 +14,13 @@ class Participant extends Pivor
 
     public $incrementing = true;
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function event()
+    public function event(): BelongsTo
     {
-        return $this->belongTo(Event::class);
+        return $this->belongsTo(Event::class);
     }
 }

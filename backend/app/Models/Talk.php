@@ -15,22 +15,22 @@ class Talk extends Model
         'participant_number'
     ];
 
-    public function media()
+    public function media(): HasOne
     {
         return $this->hasOne(Media::class);
     }
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function event()
+    public function event(): HasOneThrough
     {
         return $this->hasOneThrough(Event::class, Order::class);
     }
 
-    public function order()
+    public function order(): HasOne
     {
         return $this->hasOne(Order::class);
     }
