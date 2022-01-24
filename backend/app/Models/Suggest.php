@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Suggest extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'theme'
+    ];
 }

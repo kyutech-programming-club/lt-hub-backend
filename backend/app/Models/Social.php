@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Social extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'gihub_id',
+        'twitter_id'
+    ];
 }
