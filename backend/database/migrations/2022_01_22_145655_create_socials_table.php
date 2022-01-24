@@ -16,8 +16,8 @@ class CreateSocialsTable extends Migration
         Schema::create('socials', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('user_id')->comment('ユーザー');
-            $table->string('github_id')->comment('GitHub');
-            $table->string('twitter_id')->comment('Twitter');
+            $table->string('github_id')->nullable()->comment('GitHub');
+            $table->string('twitter_id')->nullable()->comment('Twitter');
             $table->timestamps();
         });
     }
