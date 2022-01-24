@@ -14,7 +14,7 @@ class CreateParticipantsTable extends Migration
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
-            $table->id()->primary();
+            $table->id();
             $table->string('state')->comment('状態');
             $table->timestamps();
 
