@@ -27,7 +27,7 @@ class Talk extends Model
 
     public function event()
     {
-        return $this->belongsTo(Event::class);
+        return $this->hasOneThrough(Event::class, Order::class);
     }
 
     public function order()

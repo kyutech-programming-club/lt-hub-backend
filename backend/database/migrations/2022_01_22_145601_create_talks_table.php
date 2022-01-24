@@ -20,7 +20,7 @@ class CreateTalksTable extends Migration
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users')->comment('発表者');
-            $table->foreignId('event_id')->constrained('events')->comment('イベント');
+            $table->foreignId('order_id')->constrained('orders')->comment('順番');
         });
     }
 

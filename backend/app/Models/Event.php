@@ -27,7 +27,7 @@ class Event extends Model
 
     public function talks()
     {
-        return $this->hasMany(Talk::class);
+        return $this->hasManyThrough(Talk::class, Order::class);
     }
 
     public function orders()
