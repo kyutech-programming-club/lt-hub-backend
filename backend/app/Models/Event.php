@@ -15,7 +15,6 @@ class Event extends Model
         'start_time',
         'end_time',
         'location',
-        'location',
         'state',
         'participant_number'
     ];

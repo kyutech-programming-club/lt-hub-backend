@@ -12,7 +12,6 @@ class Talk extends Model
     protected $fillable = [
         'title',
         'state',
-        'participant_number'
     ];
 
     public function media(): HasOne

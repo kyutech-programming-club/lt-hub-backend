@@ -14,11 +14,6 @@ class Order extends Model
         'order'
     ];
 
-    public function event(): BelongsTo
-    {
-        return $this->belongsTo(Event::class);
-    }
-
     public function talk(): BelongsTo
     {
         return $this->belongsTo(Talk::class);

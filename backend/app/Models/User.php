@@ -52,7 +52,7 @@ class User extends Model
     public function followers(): BelongsToMany
     {
         return $this
-            ->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id')
+            ->belongsToMany(User::class, 'follows', 'follower_id', 'follow_id')
             ->using(Follow::class);
     }
 }
