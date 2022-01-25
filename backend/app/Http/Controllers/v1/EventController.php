@@ -7,5 +7,43 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    //
+    public function index()
+    {
+        // code
+    }
+
+    public function create()
+    {
+        // code
+    }
+
+    public function created()
+    {
+        // code
+    }
+
+    public function joined()
+    {
+        // code
+    }
+
+    public function mypage()
+    {
+        // code
+    }
+
+    public function show()
+    {
+        // code
+    }
+
+    public function update()
+    {
+        // code
+    }
+
+    public function destroy()
+    {
+        // code
+    }
 }

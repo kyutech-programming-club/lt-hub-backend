@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\UserController;
+use App\Http\Controllers\v1\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,14 @@ Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
     });
 
     Route::group(['prefix' => '/events', 'as' => 'events.'], function() {
-        // events
+        Route::get('', [EventController::class, 'index'])->name('index');
+        Route::post('', [EventController::class, 'create'])->name('create');
+        Route::get('/created', [EventController::class, 'created'])->name('created');
+        Route::get('/joined', [EventController::class, 'joined'])->name('joined');
+        Route::get('/mypage', [EventController::class, 'mypage'])->name('mypage');
+        Route::get('/{eventId}', [EventController::class, 'show'])->name('show');
+        Route::put('/{eventId}', [EventController::class, 'update'])->name('update');
+        Route::delete('/{eventId}', [EventController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['prefix' => '/talks', 'as' => 'talks.'], function() {
