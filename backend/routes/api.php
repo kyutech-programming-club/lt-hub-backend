@@ -24,7 +24,7 @@ use App\Http\Controllers\v1\TalkController;
 // 将来的にtokenのmiddlewareを追加
 Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
     Route::group(['prefix' => '/login', 'as' => 'login.'], function() {
-        // login
+        Route::get('', [EventController::class, 'index'])->name('index');
     });
 
     Route::group(['prefix' => '/users', 'as' => 'users.'], function() {
