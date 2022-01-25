@@ -9,9 +9,8 @@ class Media extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'video_url',
-        'slide_url'
+    protected $guarded = [
+        'id'
     ];
 
     public function talk(): BelongsTo

@@ -9,9 +9,8 @@ class Talk extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-        'state',
+    protected $guarded = [
+        'id'
     ];
 
     public function media(): HasOne

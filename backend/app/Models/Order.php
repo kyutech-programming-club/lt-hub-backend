@@ -10,8 +10,8 @@ class Order extends Model
 
     public $incrementing = true;
 
-    protected $fillable = [
-        'order'
+    protected $guarded = [
+        'id'
     ];
 
     public function talk(): BelongsTo

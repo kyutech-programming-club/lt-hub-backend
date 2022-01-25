@@ -9,10 +9,8 @@ class User extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'public_id',
-        'name',
-        'avatar_url'
+    protected $guarded = [
+        'id'
     ];
 
     public function role(): HasOne

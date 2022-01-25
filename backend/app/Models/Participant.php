@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class Participant extends Pivor
 {
     protected $table = 'paticipants';
-
-    protected $fillable = [
-        'state'
+    protected $guarded = [
+        'id'
     ];
 
     public $incrementing = true;

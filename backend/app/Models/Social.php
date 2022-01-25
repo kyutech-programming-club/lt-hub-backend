@@ -9,9 +9,8 @@ class Social extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'gihub_id',
-        'twitter_id'
+    protected $guarded = [
+        'id'
     ];
 
     public function user(): BelongsTo

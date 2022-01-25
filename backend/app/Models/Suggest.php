@@ -9,7 +9,7 @@ class Suggest extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'theme'
+    protected $guarded = [
+        'id'
     ];
 }
