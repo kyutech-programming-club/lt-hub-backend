@@ -51,9 +51,9 @@ Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
         Route::post('', [TalkController::class, 'create'])->name('create');
         Route::put('/order', [TalkController::class, 'order'])->name('order');
         Route::get('/mypage', [TalkController::class, 'mypage'])->name('mypage');
-        Route::get('/{eventId}', [TalkController::class, 'show'])->name('show');
-        Route::put('/{eventId}', [TalkController::class, 'update'])->name('update');
-        Route::delete('/{eventId}', [TalkController::class, 'destroy'])->name('destroy');
+        Route::get('/{talkId}', [TalkController::class, 'show'])->name('show');
+        Route::put('/{talkId}', [TalkController::class, 'update'])->name('update');
+        Route::delete('/{talkId}', [TalkController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['prefix' => '/participants', 'as' => 'participants.'], function() {
