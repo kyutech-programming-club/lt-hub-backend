@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\UserController;
 use App\Http\Controllers\v1\EventController;
 use App\Http\Controllers\v1\TalkController;
+use App\Http\Controllers\v1\ParticipantController;
+use App\Http\Controllers\v1\SuggestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,10 +57,14 @@ Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
     });
 
     Route::group(['prefix' => '/participants', 'as' => 'participants.'], function() {
-        // participants
+        Route::get('/{eventId}', [ParticipantController::class, 'index'])->name('index');
+        Route::post('/{eventId}', [ParticipantController::class, 'create'])->name('create');
+        Route::patch('/{participantId}', [ParticipantController::class, 'update'])->name('update');
+        Route::delete('/{participantId}', [ParticipantController::class, 'destroy'])->name('destroy');
     });
 
     Route::group(['prefix' => '/suggests', 'as' => 'suggests.'], function() {
-        // suggests
+        Route::get('', [SuggestController::class, 'index'])->name('index');
+        Route::post('', [SuggestController::class, 'create'])->name('create');
     });
 });
