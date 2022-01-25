@@ -12,7 +12,7 @@ class EventController extends Controller
         // code
     }
 
-    public function create()
+    public function store()
     {
         // code
     }
