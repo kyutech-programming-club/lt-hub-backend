@@ -14,6 +14,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// 将来的にtokenのmiddlewareを追加
+Route::group(['prefix' => 'v1', 'as' => 'v1.'], function () {
+    Route::group(['prefix' => 'login', 'as' => 'login.'], function() {
+        // login
+    });
+
+    Route::group(['prefix' => 'users', 'as' => 'users.'], function() {
+        // users
+    });
+
+    Route::group(['prefix' => 'events', 'as' => 'events.'], function() {
+        // events
+    });
+
+    Route::group(['prefix' => 'talks', 'as' => 'talks.'], function() {
+        // talks
+    });
+
+    Route::group(['prefix' => 'participants', 'as' => 'participants.'], function() {
+        // participants
+    });
+
+    Route::group(['prefix' => 'suggests', 'as' => 'suggests.'], function() {
+        // suggests
+    });
 });
