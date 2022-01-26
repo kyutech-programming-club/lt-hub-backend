@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\v1\LoginController;
 use App\Http\Controllers\v1\UserController;
 use App\Http\Controllers\v1\EventController;
 use App\Http\Controllers\v1\TalkController;
@@ -26,7 +27,7 @@ use App\Http\Controllers\v1\SuggestController;
 // 将来的にtokenのmiddlewareを追加
 Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
     Route::group(['prefix' => '/login', 'as' => 'login.'], function() {
-        Route::get('', [EventController::class, 'index'])->name('index');
+        Route::get('', [LoginController::class, 'index'])->name('index');
     });
 
     Route::group(['prefix' => '/users', 'as' => 'users.'], function() {
