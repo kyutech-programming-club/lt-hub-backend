@@ -16,17 +16,18 @@ class FirebaseTokenIsValid
      */
     public function handle(Request $request, Closure $next)
     {
+        // ヘッダーのトークンが有効であるかのチェック
         try {
             $auth = app('firebase.auth');
             $verifiedIdToken = $auth->verifyIdToken($request->header('token'));
         } catch (InvalidToken $e) {
             abort(401);
         } catch (\InvalidArgumentException $e) {
-            abort(401);
+            abort(400);
         }
 
+        // トークンからユーザーIDを取得し、requestに追加
         $uid = $verifiedIdToken->claims()->get('sub');
-        // 以下ユーザーがあるかの確認
         $accessUserId = User::where('firebase_id', $uid)->value('id');
         $request->margeIfMissing(['accessUserId' => $accessUserId]);
 
