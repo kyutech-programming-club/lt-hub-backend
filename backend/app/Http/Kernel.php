@@ -43,7 +43,9 @@ class Kernel extends HttpKernel
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\FirebaseTokenIsValid::class,
+
+            // 実際にUserとかできたりしてからここを使うtukau
+            // \App\Http\Middleware\FirebaseTokenIsValid::class,
         ],
     ];
 
