@@ -20,11 +20,12 @@ class FirebaseTokenIsValid
             $auth = app('firebase.auth');
             $verifiedIdToken = $auth->verifyIdToken($request->header('token'));
         } catch (InvalidToken $e) {
-            return $e->getMessage();
+            return $e->getMessage('無効なトークン');
         } catch (\InvalidArgumentException $e) {
-            return $e->getMessage();
+            return $e->getMessage('トークンなくね？');
         }
         // $uid = $verifiedIdToken->claims()->get('sub');
+        // 以下ユーザーがあるかの確認
 
         return $next($request);
     }
