@@ -15,11 +15,11 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('public_id')->unique()->comment('ユーザーID');
+            $table->string('public_id')->unique()->comment('公開用ID');
             $table->string('name')->comment('名前');
             $table->string('email')->comment('メールアドレス');
             $table->string('avatar_url')->comment('アイコン');
-            $table->string('uid')->unique()->comment('UID');
+            $table->string('firebase_id')->unique()->comment('FirebaseID');
             $table->timestamps();
         });
     }
