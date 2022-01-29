@@ -21,7 +21,6 @@ class CreateEventsTable extends Migration
             $table->date('end_time')->comment('終了時間');
             $table->string('location')->nullable()->comment('場所');
             $table->string('state')->comment('公開範囲');
-            $table->integer('participant_number')->comment('参加人数');
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users')->comment('主催者');
