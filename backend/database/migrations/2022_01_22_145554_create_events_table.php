@@ -17,8 +17,8 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title')->comment('タイトル');
             $table->string('description')->nullable()->comment('説明');
-            $table->date('start_time')->comment('開始時間');
-            $table->date('end_time')->comment('終了時間');
+            $table->string('start_time')->comment('開始時間');
+            $table->string('end_time')->comment('終了時間');
             $table->string('location')->nullable()->comment('場所');
             $table->string('state')->comment('公開範囲');
             $table->timestamps();
