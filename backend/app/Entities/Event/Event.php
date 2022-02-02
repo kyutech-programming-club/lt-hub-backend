@@ -11,6 +11,7 @@ class Event
     protected string $endTime;
     protected string $location;
     protected string $state;
+    protected int $hostId;
 
     public function __construct(object $eventd)
     {
@@ -21,6 +22,7 @@ class Event
         if(isset($event->end_time)) $this->endTime = $event->end_time;
         if(isset($event->location)) $this->location = $event->location;
         if(isset($event->state)) $this->state = $event->state;
+        if(isset($event->user_id)) $this->hostId = $event->user_id;
     }
 
     public function getId()
@@ -56,5 +58,10 @@ class Event
     public function getState()
     {
         return $this->state;
+    }
+
+    public function getHostId()
+    {
+        return $this->hostId;
     }
 }
