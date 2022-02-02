@@ -13,7 +13,7 @@ class Event
     protected string $state;
     protected int $hostId;
 
-    public function __construct(object $eventd)
+    public function __construct(object $event)
     {
         if(isset($event->id)) $this->id = $event->id;
         if(isset($event->title)) $this->title = $event->title;
