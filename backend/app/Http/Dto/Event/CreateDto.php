@@ -6,7 +6,6 @@ use App\Http\Dto\BaseDto;
 
 class CreateDto extends BaseDto
 {
-    public int $accessUserId;
     public string $title;
     public string $description;
     public string $startTime;

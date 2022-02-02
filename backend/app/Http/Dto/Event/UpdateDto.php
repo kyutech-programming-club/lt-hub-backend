@@ -6,7 +6,6 @@ use App\Http\Dto\BaseDto;
 
 class UpdateDto extends BaseDto
 {
-    public int $accessUserId;
     public int $eventId;
     public string $title;
     public string $description;
