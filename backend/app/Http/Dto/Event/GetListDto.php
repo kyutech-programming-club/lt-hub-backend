@@ -4,10 +4,9 @@ namespace App\Http\Dto\Movie;
 
 use App\Http\Dto\BaseDto;
 
-class DeleteDto extends BaseDto
+class GetListDto extends BaseDto
 {
-    public int $accessUserId;
-    public int $eventId;
+    public int $page;
 
     public function __construct(array $array)
     {
