@@ -3,10 +3,18 @@
 namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
+use App\Usecases\v1\EventUsecaseInterface;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    private EventUsecaseInterface $eventUsecase;
+
+    public function __construct(EventUsecaseInterface $eventUsecase)
+    {
+        $this->eventUsecase = $eventUsecase;
+    }
+
     public function index()
     {
         // code
