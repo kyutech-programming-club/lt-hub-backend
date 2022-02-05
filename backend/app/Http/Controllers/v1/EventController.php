@@ -9,6 +9,13 @@ use App\Http\Requests\Event\CreateRequest;
 use App\Http\Requests\Event\UpdateRequest;
 use App\Http\Requests\Event\FindByUserIdRequest;
 use App\Http\Requests\Event\GetListRequest;
+use App\Http\Dto\BaseDto;
+use App\Http\Dto\Event\GetListDto;
+use App\Http\Dto\Event\CreateDto;
+use App\Http\Dto\Event\FindByIdDto;
+use App\Http\Dto\Event\FindByUserIdDto;
+use App\Http\Dto\Event\UpdateDto;
+use Vinkla\Hashids\Facades\Hashids;
 
 class EventController extends Controller
 {
@@ -21,46 +28,82 @@ class EventController extends Controller
 
     public function index(GetListRequest $request)
     {
-        // code
+        $getListDto = new GetListDto([
+            'accessUserId' => $request->accessUserId,
+            'page' => $request->page
+        ]);
     }
 
     public function store(CreateRequest $request)
     {
-        // code
+        $createDto = new CreateDto([
+            'accessUserId' => $request->accessUserId,
+            'title' => $request->title,
+            'description' => $request->description,
+            'startTime' => $request->startTime,
+            'endTime' => $request->endTime,
+            'location' => $request->location,
+            'state' => $request->state
+        ]);
     }
 
     public function created(Request $request)
     {
-        // code
+        $dto = new BaseDto([
+            'accessUserId' => $request->accessUserId
+        ]);
     }
 
     public function joined(Request $request)
     {
-        // code
+        $dto = new BaseDto([
+            'accessUserId' => $request->accessUserId
+        ]);
     }
 
     public function mypage(FindByUserIdRequest $request)
     {
-        // code
+        $findByUserIdDto = new FindByIdUserDto([
+            'accessUserId' => $request->accessUserId,
+            'userId' => Hashids::decode($request->userId)[0]
+        ]);
     }
 
     public function show(Request $request, string $eventId)
     {
-        // code
+        $findByIdDto = new FindByIdDto([
+            'accessUserId' => $request->accessUserId,
+            'eventId' => Hashids::decode($eventId)[0]
+        ]);
     }
 
     public function update(UpdateRequest $request, string $eventId)
     {
-        // code
+        $updateDto = new UpdateDto([
+            'accessUserId' => $request->accessUserId,
+            'eventId' => Hashids::decode($eventId)[0],
+            'description' => $request->description,
+            'startTime' => $request->startTime,
+            'endTime' => $request->endTime,
+            'location' => $request->location,
+            'state' => $request->state
+        ]);
+
     }
 
     public function destroy(Request $request, string $eventId)
     {
-        // code
+        $findByIdDto = new FindByIdDto([
+            'accessUserId' => $request->accessUserId,
+            'eventId' => Hashids::decode($eventId)[0]
+        ]);
     }
 
     public function detail(Request $request, string $eventId)
     {
-        // code
+        $findByIdDto = new FindByIdDto([
+            'accessUserId' => $request->accessUserId,
+            'eventId' => Hashids::decode($eventId)[0]
+        ]);
     }
 }
