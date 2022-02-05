@@ -5,8 +5,10 @@ namespace App\Http\Controllers\v1;
 use App\Http\Controllers\Controller;
 use App\Usecases\EventUsecaseInterface;
 use Illuminate\Http\Request;
-use App\Http\Requests\Event\CreateEventRequest;
-use App\Http\Requests\Event\UpdateEventRequest;
+use App\Http\Requests\Event\CreateRequest;
+use App\Http\Requests\Event\UpdateRequest;
+use App\Http\Requests\Event\FindByUserIdRequest;
+use App\Http\Requests\Event\GetListRequest;
 
 class EventController extends Controller
 {
@@ -17,47 +19,47 @@ class EventController extends Controller
         $this->eventUsecase = $eventUsecase;
     }
 
-    public function index()
+    public function index(GetListRequest $request)
     {
         // code
     }
 
-    public function store()
+    public function store(CreateRequest $request)
     {
         // code
     }
 
-    public function created()
+    public function created(Request $request)
     {
         // code
     }
 
-    public function joined()
+    public function joined(Request $request)
     {
         // code
     }
 
-    public function mypage()
+    public function mypage(FindByUserIdRequest $request)
     {
         // code
     }
 
-    public function show()
+    public function show(Request $request, string $eventId)
     {
         // code
     }
 
-    public function update()
+    public function update(UpdateRequest $request, string $eventId)
     {
         // code
     }
 
-    public function destroy()
+    public function destroy(Request $request, string $eventId)
     {
         // code
     }
 
-    public function detail()
+    public function detail(Request $request, string $eventId)
     {
         // code
     }
