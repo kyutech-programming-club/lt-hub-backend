@@ -43,6 +43,7 @@ Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
         Route::get('/{eventId}', [EventController::class, 'show'])->name('show');
         Route::put('/{eventId}', [EventController::class, 'update'])->name('update');
         Route::delete('/{eventId}', [EventController::class, 'destroy'])->name('destroy');
+        Route::get('/{eventId}/detail', [EventController::class, 'detail'])->name('detail');
     });
 
     Route::group(['prefix' => '/talks', 'as' => 'talks.'], function() {
