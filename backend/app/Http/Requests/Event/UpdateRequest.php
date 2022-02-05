@@ -25,7 +25,6 @@ class UpdateRequest extends FormRequest
     {
         return [
             //
-            'eventId' => ['required', 'string'],
             'title' => ['required', 'string', 'max:32'],
             'description' => ['nullable', 'string'],
             'startTime' => ['required', 'string', 'max:11'],
