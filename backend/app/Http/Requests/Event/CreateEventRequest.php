@@ -25,6 +25,12 @@ class CreateEventRequest extends FormRequest
     {
         return [
             //
+            'title' => ['required', 'string', 'max:32'],
+            'description' => ['nullable', 'string'],
+            'startTime' => ['required', 'string', 'max:11'],
+            'endTime' => ['required', 'string', 'max:11'],
+            'location' => ['nullable', 'string'],
+            'state' => ['required', 'string', 'in:private,limited,public'],
         ];
     }
 }
