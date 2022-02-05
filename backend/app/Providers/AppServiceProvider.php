@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind(
-            \App\Usecases\v1\EventUsecaseInterface::class,
-            \App\Usecases\v1\EventUsecase::class
+            \App\Usecases\EventUsecaseInterface::class,
+            \App\Usecases\EventUsecase::class
         );
     }
 
