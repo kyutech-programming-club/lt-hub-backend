@@ -46,4 +46,9 @@ class EventController extends Controller
     {
         // code
     }
+
+    public function detail()
+    {
+        // code
+    }
 }
