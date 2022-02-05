@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Usecases\v1;
+namespace App\Usecases;
 
 use App\Http\Dto\BaseDto;
 use App\Http\Dto\Event\CreateDto;
