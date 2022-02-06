@@ -30,14 +30,18 @@ class EventController extends Controller
     {
         $getListDto = new GetListDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'page' => $request->page
         ]);
+
+        $result = $this->eventUsecase->index($getListDto);
     }
 
     public function store(CreateRequest $request)
     {
         $createDto = new CreateDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'title' => $request->title,
             'description' => $request->description,
             'startTime' => $request->startTime,
@@ -45,42 +49,57 @@ class EventController extends Controller
             'location' => $request->location,
             'state' => $request->state
         ]);
+
+        $result = $this->eventUsecase->store($createDto);
     }
 
     public function created(Request $request)
     {
         $dto = new BaseDto([
-            'accessUserId' => $request->accessUserId
+            'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole
         ]);
+
+        $result = $this->eventUsecase->created($dto);
     }
 
     public function joined(Request $request)
     {
         $dto = new BaseDto([
-            'accessUserId' => $request->accessUserId
+            'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole
         ]);
+
+        $result = $this->eventUsecase->joined($dto);
     }
 
     public function mypage(FindByUserIdRequest $request)
     {
         $findByUserIdDto = new FindByIdUserDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'userId' => Hashids::decode($request->userId)[0]
         ]);
+
+        $result = $this->eventUsecase->mypage($findByUserIdDto);
     }
 
     public function show(Request $request, string $eventId)
     {
         $findByIdDto = new FindByIdDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'eventId' => Hashids::decode($eventId)[0]
         ]);
+
+        $result = $this->eventUsecase->show($findById);
     }
 
     public function update(UpdateRequest $request, string $eventId)
     {
         $updateDto = new UpdateDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'eventId' => Hashids::decode($eventId)[0],
             'description' => $request->description,
             'startTime' => $request->startTime,
@@ -89,21 +108,28 @@ class EventController extends Controller
             'state' => $request->state
         ]);
 
+        $result = $this->eventUsecase->update($updateDto);
     }
 
     public function destroy(Request $request, string $eventId)
     {
         $findByIdDto = new FindByIdDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'eventId' => Hashids::decode($eventId)[0]
         ]);
+
+        $result = $this->eventUsecase->destroy($findByIdDto);
     }
 
     public function detail(Request $request, string $eventId)
     {
         $findByIdDto = new FindByIdDto([
             'accessUserId' => $request->accessUserId,
+            'accessUserRole' => $request->accessUserRole,
             'eventId' => Hashids::decode($eventId)[0]
         ]);
+
+        $result = $this->eventUsecase->detail($findByIdDto);
     }
 }
