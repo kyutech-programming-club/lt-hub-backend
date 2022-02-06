@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Role;
 
 class FirebaseTokenIsValid
 {
@@ -30,6 +32,11 @@ class FirebaseTokenIsValid
         $uid = $verifiedIdToken->claims()->get('sub');
         $accessUserId = User::where('firebase_id', $uid)->value('id');
         $request->margeIfMissing(['accessUserId' => $accessUserId]);
+
+        if ($accessUserId) {
+            $accessUserRole = Role::where('user_id', $accessUserId)->value('id');
+            $request->margeIfMissing(['accessUserRole' => $accessUserRole]);
+        }
 
         return $next($request);
     }
