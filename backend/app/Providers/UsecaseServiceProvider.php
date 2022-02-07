@@ -15,7 +15,6 @@ class UsecaseServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             \App\Usecases\EventUsecaseInterface::class,
-            \App\Usecases\EventUsecase::class
             function ($app) {
                 return new \App\Usecases\EventUsecase(
                     $app->make(\App\Repositories\EventRepositoryInterface::class)
