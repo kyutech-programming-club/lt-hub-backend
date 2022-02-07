@@ -8,7 +8,7 @@ use App\Usecases\EventUsecase;
 use App\Http\Dto\Event\FindByUserIdDto;
 use Vinkla\Hashids\Facades\Hashids;
 
-class CreatedController extends Controller
+class MypageController extends Controller
 {
     public function __invoke(FindByUserIdRequest $request, EventUsecase $usecase)
     {
