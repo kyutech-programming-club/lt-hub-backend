@@ -2,6 +2,7 @@
 
 namespace App\Usecases;
 
+use App\Repositories\EventRepositoryInterface;
 use App\Http\Dto\BaseDto;
 use App\Http\Dto\Event\CreateDto;
 use App\Http\Dto\Event\FindByDto;
@@ -11,6 +12,13 @@ use App\Http\Dto\Event\UpdateDto;
 
 class EventUsecase implements EventUsecaseInterface
 {
+    private EventRepositoryInterface $eventRepository;
+
+    public function __construct(EventRepositoryInterface $eventRepository)
+    {
+        $this->eventRepository = $eventRepository;
+    }
+
     public function index(GetListDto $getListDto)
     {
         /*

@@ -14,10 +14,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(
-            \App\Usecases\EventUsecaseInterface::class,
-            \App\Usecases\EventUsecase::class
-        );
     }
 
     /**
