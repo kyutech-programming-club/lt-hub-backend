@@ -10,7 +10,7 @@ use Vinkla\Hashids\Facades\Hashids;
 
 class DetailController extends Controller
 {
-    public function detail(Request $request, string $eventId, DetailUsecase $usecase)
+    public function __invoke(Request $request, string $eventId, DetailUsecase $usecase)
     {
         $findByIdDto = new FindByIdDto([
             'accessUserId' => $request->accessUserId,
