@@ -5,7 +5,7 @@ namespace App\Usecases\Event;
 use App\Repositories\EventRepositoryInterface;
 use App\Http\Dto\Event\FindByIdDto;
 
-class DetailUsecase
+class DestroyUsecase
 {
     private EventRepositoryInterface $eventRepository;
 
@@ -14,17 +14,12 @@ class DetailUsecase
         $this->eventRepository = $eventRepository;
     }
 
-    public function execute(FindByIdDto $findByIdDto)
+    public function destroy(FindByIdDto $findByIdDto)
     {
         /*
-            if role == 1
-                getEventDetail
-            else
-                getParticipantState
-                if (state == ok)
-                    getEventDetail
-                else
-                    getLimitEvent
+            if accessUser == hostId
+                deleteEvent
+                deleteEventTalks
         */
     }
 }
