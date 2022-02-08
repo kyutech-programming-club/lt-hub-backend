@@ -16,6 +16,6 @@ class JoinedController extends Controller
             'accessUserRole' => $request->accessUserRole
         ]);
 
-        $result = $this->eventUsecase->joined($dto);
+        $result = $usecase->execute($dto);
     }
 }
