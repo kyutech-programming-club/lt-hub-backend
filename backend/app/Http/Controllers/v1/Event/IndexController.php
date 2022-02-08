@@ -17,6 +17,6 @@ class IndexController extends Controller
             'page' => $request->page
         ]);
 
-        $result = $usecase->index($getListDto);
+        $result = $usecase->execute($getListDto);
     }
 }

@@ -16,6 +16,6 @@ class CreatedController extends Controller
             'accessUserRole' => $request->accessUserRole
         ]);
 
-        $result = $usecase->created($dto);
+        $result = $usecase->execute($dto);
     }
 }

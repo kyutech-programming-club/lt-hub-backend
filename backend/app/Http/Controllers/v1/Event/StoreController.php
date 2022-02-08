@@ -22,6 +22,6 @@ class StoreController extends Controller
             'state' => $request->state
         ]);
 
-        $result = $usecase->store($createDto);
+        $result = $usecase->execute($createDto);
     }
 }
