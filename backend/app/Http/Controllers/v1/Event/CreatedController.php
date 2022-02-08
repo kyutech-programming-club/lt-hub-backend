@@ -4,12 +4,12 @@ namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Usecases\EventUsecase;
+use App\Usecases\Event\CreatedUsecase;
 use App\Http\Dto\BaseDto;
 
 class CreatedController extends Controller
 {
-    public function __invoke(Request $request, EventUsecase $usecase)
+    public function __invoke(Request $request, CreatedUsecase $usecase)
     {
         $dto = new BaseDto([
             'accessUserId' => $request->accessUserId,
