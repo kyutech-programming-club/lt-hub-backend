@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
-use App\Usecases\EventUsecase;
 use Illuminate\Http\Request;
 use App\Http\Dtos\Event\FindByIdDto;
+use App\Usecases\Event\ShowUsecase;
 use Vinkla\Hashids\Facades\Hashids;
 
 class MypageController extends Controller
 {
-    public function __invoke(Request $request, string $eventId, EventUsecase $usecase)
+    public function __invoke(Request $request, string $eventId, ShowUsecase $usecase)
     {
         $findByIdDto = new FindByIdDto([
             'accessUserId' => $request->accessUserId,
@@ -18,6 +18,6 @@ class MypageController extends Controller
             'eventId' => Hashids::decode($eventId)[0]
         ]);
 
-        $result = $this->eventUsecase->show($findById);
+        $result = $usecase->execute($findById);
     }
 }

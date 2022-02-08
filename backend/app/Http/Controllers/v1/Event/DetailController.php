@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
-use App\Usecases\EventUsecase;
 use Illuminate\Http\Request;
 use App\Http\Dtos\Event\FindByIdDto;
+use App\Usecases\Event\DetailUsecase;
 use Vinkla\Hashids\Facades\Hashids;
 
 class DetailController extends Controller
@@ -18,6 +18,6 @@ class DetailController extends Controller
             'eventId' => Hashids::decode($eventId)[0]
         ]);
 
-        $result = $this->eventUsecase->destroy($findByIdDto);
+        $result = $usecase->execute($findByIdDto);
     }
 }
