@@ -9,7 +9,7 @@ class EventList
     public function __construct(array $events)
     {
         $this->events = array_map(function ($event) {
-            return new Movie((object) $event);
+            return new Event((object) $event);
         }, $events);
     }
 
