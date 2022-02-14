@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Dto;
+namespace App\Http\Dtos;
 
 class BaseDto
 {

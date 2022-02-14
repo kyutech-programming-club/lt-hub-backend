@@ -2,12 +2,12 @@
 
 namespace App\Usecases;
 
-use App\Http\Dto\BaseDto;
-use App\Http\Dto\Event\CreateDto;
-use App\Http\Dto\Event\FindByDto;
-use App\Http\Dto\Event\FindByUserIdDto;
-use App\Http\Dto\Event\GetListDto;
-use App\Http\Dto\Event\UpdateDto;
+use App\Http\Dtos\BaseDto;
+use App\Http\Dtos\Event\CreateDto;
+use App\Http\Dtos\Event\FindByDto;
+use App\Http\Dtos\Event\FindByUserIdDto;
+use App\Http\Dtos\Event\GetListDto;
+use App\Http\Dtos\Event\UpdateDto;
 
 class EventUsecase implements EventUsecaseInterface
 {

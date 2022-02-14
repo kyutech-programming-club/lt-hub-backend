@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Dto\Movie;
+namespace App\Http\Dtos\Movie;
 
-use App\Http\Dto\BaseDto;
+use App\Http\Dtos\BaseDto;
 
 class UpdateDto extends BaseDto
 {
