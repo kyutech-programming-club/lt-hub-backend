@@ -28,7 +28,7 @@ class Event extends Model
         return $this->hasManyThrough(Order::class, Talk::class);
     }
 
-    public function participantUser(): BelongsToMany
+    public function participants(): BelongsToMany
     {
         return $this
             ->belongdToMany(User::class)
