@@ -12,7 +12,6 @@ class CreateDto extends BaseDto
     public string $endTime;
     public string $location;
     public string $state;
-    public int $hostId;
 
     public function __construct(array $array)
     {
