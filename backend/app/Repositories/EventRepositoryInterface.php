@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Http\Dto\Event\CreateDto;
-use App\Http\Dto\Event\UpdateDto;
+use App\Http\Dtos\Event\CreateDto;
+use App\Http\Dtos\Event\UpdateDto;
 
 interface EventRepositoryInterface {
     public function getAllEvents();
