@@ -9,12 +9,12 @@ use App\Http\Requests\Event\CreateRequest;
 use App\Http\Requests\Event\UpdateRequest;
 use App\Http\Requests\Event\FindByUserIdRequest;
 use App\Http\Requests\Event\GetListRequest;
-use App\Http\Dto\BaseDto;
-use App\Http\Dto\Event\GetListDto;
-use App\Http\Dto\Event\CreateDto;
-use App\Http\Dto\Event\FindByIdDto;
-use App\Http\Dto\Event\FindByUserIdDto;
-use App\Http\Dto\Event\UpdateDto;
+use App\Http\Dtos\BaseDto;
+use App\Http\Dtos\Event\GetListDto;
+use App\Http\Dtos\Event\CreateDto;
+use App\Http\Dtos\Event\FindByIdDto;
+use App\Http\Dtos\Event\FindByUserIdDto;
+use App\Http\Dtos\Event\UpdateDto;
 use Vinkla\Hashids\Facades\Hashids;
 
 class EventController extends Controller
