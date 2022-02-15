@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Dtos\Movie;
+namespace App\Http\Dtos\Event;
 
 use App\Http\Dtos\BaseDto;
 
