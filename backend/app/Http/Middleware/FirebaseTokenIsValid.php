@@ -34,7 +34,7 @@ class FirebaseTokenIsValid
         $request->margeIfMissing(['accessUserId' => $accessUserId]);
 
         if ($accessUserId) {
-            $accessUserRole = Role::where('user_id', $accessUserId)->value('id');
+            $accessUserRole = Role::where('user_id', $accessUserId)->value('role');
             $request->margeIfMissing(['accessUserRole' => $accessUserRole]);
         }
 
