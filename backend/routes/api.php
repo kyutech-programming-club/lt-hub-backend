@@ -35,15 +35,7 @@ Route::group(['prefix' => '/v1', 'as' => 'v1.'], function () {
     });
 
     Route::group(['prefix' => '/events', 'as' => 'events.'], function() {
-        Route::get('', [EventController::class, 'index'])->name('index');
-        Route::post('', [EventController::class, 'store'])->name('store');
-        Route::get('/created', [EventController::class, 'created'])->name('created');
-        Route::get('/joined', [EventController::class, 'joined'])->name('joined');
-        Route::get('/mypage', [EventController::class, 'mypage'])->name('mypage');
-        Route::get('/{eventId}', [EventController::class, 'show'])->name('show');
-        Route::put('/{eventId}', [EventController::class, 'update'])->name('update');
-        Route::delete('/{eventId}', [EventController::class, 'destroy'])->name('destroy');
-        Route::get('/{eventId}/detail', [EventController::class, 'detail'])->name('detail');
+        require __DIR__ . '/api/event.php';
     });
 
     Route::group(['prefix' => '/talks', 'as' => 'talks.'], function() {
