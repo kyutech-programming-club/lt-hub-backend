@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
-use App\Usecases\EventUsecase;
 use Illuminate\Http\Request;
 use App\Http\Dtos\BaseDto;
+use App\Usecases\Event\JoinedUsecase;
 
 class JoinedController extends Controller
 {
-    public function __invoke(Request $request, EventUsecase $usecase)
+    public function __invoke(Request $request, JoinedUsecase $usecase)
     {
         $dto = new BaseDto([
             'accessUserId' => $request->accessUserId,
             'accessUserRole' => $request->accessUserRole
         ]);
 
-        $result = $this->eventUsecase->joined($dto);
+        $result = $usecase->execute($dto);
     }
 }

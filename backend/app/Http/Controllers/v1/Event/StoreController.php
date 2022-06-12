@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
-use App\Usecases\EventUsecase;
+use App\Usecases\Event\StoreUsecase;
 use App\Http\Requests\Event\CreateRequest;
 use App\Http\Dtos\Event\CreateDto;
 
 class StoreController extends Controller
 {
-    public function __invoke(CreateRequest $request, EventUsecase $usecase)
+    public function __invoke(CreateRequest $request, StoreUsecase $usecase)
     {
         $createDto = new CreateDto([
             'accessUserId' => $request->accessUserId,
@@ -22,6 +22,6 @@ class StoreController extends Controller
             'state' => $request->state
         ]);
 
-        $result = $this->eventUsecase->store($createDto);
+        $result = $usecase->execute($createDto);
     }
 }

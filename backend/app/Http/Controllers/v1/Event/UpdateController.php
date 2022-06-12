@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\v1\Event;
 
 use App\Http\Controllers\Controller;
-use App\Usecases\EventUsecase;
-use App\Http\Requests\Event\UpdateRequest;
 use App\Http\Dtos\Event\UpdateDto;
+use App\Http\Requests\Event\UpdateRequest;
+use App\Usecases\Event\UpdateUsecase;
 use Vinkla\Hashids\Facades\Hashids;
 
 class MypageController extends Controller
 {
-    public function __invoke(UpdateRequest $request, string $eventId, EventUsecase $usecase)
+    public function __invoke(UpdateRequest $request, string $eventId, UpdateUsecase $usecase)
     {
         $updateDto = new UpdateDto([
             'accessUserId' => $request->accessUserId,
@@ -23,6 +23,6 @@ class MypageController extends Controller
             'state' => $request->state
         ]);
 
-        $result = $this->eventUsecase->update($updateDto);
+        $result = $usecase->execute($updateDto);
     }
 }
