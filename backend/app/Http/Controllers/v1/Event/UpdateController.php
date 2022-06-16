@@ -8,7 +8,7 @@ use App\Http\Requests\Event\UpdateRequest;
 use App\Usecases\Event\UpdateUsecase;
 use Vinkla\Hashids\Facades\Hashids;
 
-class MypageController extends Controller
+class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, string $eventId, UpdateUsecase $usecase)
     {

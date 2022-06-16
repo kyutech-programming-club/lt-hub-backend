@@ -1,13 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\v1\Event\IndexController;
+use App\Http\Controllers\v1\Event\StoreController;
+use App\Http\Controllers\v1\Event\CreatedController;
+use App\Http\Controllers\v1\Event\JoinedController;
+use App\Http\Controllers\v1\Event\MypageController;
+use App\Http\Controllers\v1\Event\ShowController;
+use App\Http\Controllers\v1\Event\UpdateController;
+use App\Http\Controllers\v1\Event\DestroyController;
+use App\Http\Controllers\v1\Event\DetailController;
 
-Route::get('', 'v1/Event/IndexController');
-Route::post('', 'v1/Event/StoreController');
-Route::get('/created', 'v1/Event/CreatedController');
-Route::get('/joined', 'v1/Event/JoinedController');
-Route::get('/mypage', 'v1/Event/MypageController');
-Route::get('/{eventId}', 'v1/Event/ShowController');
-Route::put('/{eventId}', 'v1/Event/UpdateController');
-Route::delete('/{eventId}', 'v1/Event/DestroyController');
-Route::get('/{eventId}/detail', 'v1/Event/DetailController');
+Route::get('', IndexController::class);
+Route::post('', StoreController::class);
+Route::get('/created', CreatedController::class);
+Route::get('/joined', JoinedController::class);
+Route::get('/mypage', MypageController::class);
+Route::get('/{eventId}', ShowController::class);
+Route::put('/{eventId}', UpdateController::class);
+Route::delete('/{eventId}', DestroyController::class);
+Route::get('/{eventId}/detail', DetailController::class);
